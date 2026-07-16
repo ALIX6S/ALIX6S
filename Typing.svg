@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="40" viewBox="0 0 480 40">
+  <defs>
+    <clipPath id="reveal">
+      <rect x="0" y="0" width="480" height="40" class="progress" />
+    </clipPath>
+  </defs>
+  <style>
+    @keyframes typeLoop {
+      0% { transform: scaleX(0); }
+      18% { transform: scaleX(1); }
+      56% { transform: scaleX(1); }
+      75% { transform: scaleX(0); }
+      100% { transform: scaleX(0); }
+    }
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    .progress {
+      animation: 11s linear infinite typeLoop;
+      transform-origin: 0 0;
+    }
+    .cursor {
+      animation: 0.8s infinite blink;
+    }
+    text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: bold;
+      font-size: 18px;
+      fill: #000000;
+    }
+    @media (prefers-color-scheme: dark) {
+      text { fill: #d60cfe; }
+      .cursor { fill: #d60cfe; }
+    }
+  </style>
+  <g clip-path="url(#reveal)">
+    <text x="0" y="27">Hey I am Alix Carine VEBAMBA</text>
+  </g>
+  <rect class="cursor" x="475" y="5" width="3" height="26" fill="#000000" />
+</svg>
