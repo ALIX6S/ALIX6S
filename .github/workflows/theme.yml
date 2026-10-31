@@ -1,7 +1,9 @@
-name: Apply theme
+name: Apply theme & update graph
 on:
+  schedule:
+    - cron: "0 3 * * *"        # chaque jour à 03:00 UTC
   push:
-    paths: ["active-theme.txt", "themes/**"]
+    paths: ["active-theme.txt", "themes/**", "scripts/**"]
   workflow_dispatch:
 permissions:
   contents: write
@@ -10,9 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: ./scripts/switch-theme.sh
-      - run: |
+      - name: Appliquer le thème actif
+        run: ./scripts/switch-theme.sh
+      - name: Générer le graphe de contributions
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/generate_graph.py
+      - name: Commit
+        run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add README.md
-          git diff --staged --quiet || (git commit -m "chore: apply theme $(cat active-theme.txt)" && git push)
+          git add README.md generated/
+          git diff --staged --quiet || (git commit -m "chore: apply theme $(cat active-theme.txt) + update graph" && git push)
