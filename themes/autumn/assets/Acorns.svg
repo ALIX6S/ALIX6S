@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E8A04C"/>
+      <stop offset="1" stop-color="#D2691E"/>
+    </linearGradient>
+    <linearGradient id="cap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A0522D"/>
+      <stop offset="1" stop-color="#8B4513"/>
+    </linearGradient>
+    <g id="acorn">
+      <path d="M0 -22 Q1 -28 5 -30" fill="none" stroke="#5C3317" stroke-width="3" stroke-linecap="round"/>
+      <path d="M-13 -10 C-15 4 -10 20 0 22 C10 20 15 4 13 -10 Z" fill="url(#body)" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M-6 1 Q-8 9 -4 15" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+      <path d="M-16 -10 Q-16 -23 0 -23 Q16 -23 16 -10 Q11 -6 8 -12 Q4 -6 0 -12 Q-4 -6 -8 -12 Q-11 -6 -16 -10 Z" fill="url(#cap)" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round"/>
+      <g stroke="#C68B59" stroke-width="0.9" opacity="0.7" fill="none" stroke-linecap="round">
+        <path d="M-11 -19 Q-8 -15 -5 -19 M-3 -20 Q0 -16 3 -20 M5 -19 Q8 -15 11 -19"/>
+        <path d="M-14 -13 Q-11 -10 -8 -13 M-5 -13 Q-2 -10 1 -13 M4 -13 Q7 -10 10 -13"/>
+      </g>
+    </g>
+  </defs>
+  <use href="#acorn" transform="translate(42 42) rotate(-8)"/>
+  <use href="#acorn" transform="translate(108 40) rotate(6)"/>
+  <use href="#acorn" transform="translate(40 108) rotate(-4)"/>
+  <use href="#acorn" transform="translate(110 106) rotate(10)"/>
+</svg>
